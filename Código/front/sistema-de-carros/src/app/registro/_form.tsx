@@ -58,7 +58,7 @@ export default function CadastroForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const { confirm, ...userData } = values; // remocao do campo de confirmacao
   try {
-    const res = await fetch("", {
+    const res = await fetch("http://localhost:9090/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

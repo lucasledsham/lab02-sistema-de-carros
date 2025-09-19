@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: azilacol_back
+  data:
+    mongodb:
+      uri: mongodb+srv://thales:senha1234@institutoavaliardb.n4cwm.mongodb.net/IADB?retryWrites=true&w=majority&appName=InstitutoAvaliarDB
+
+#logging:
+#  level:
+#    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+#    org.springframework.data.mongodb.core.query: DEBUG
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    display-request-duration: true
+    persist-authorization: true
+
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
+
+server:
+  port: 9090

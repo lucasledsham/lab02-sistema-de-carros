@@ -49,7 +49,7 @@ export default function LoginForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
         /*TODO: inserir a url de acordo com o deploy*/
-      const res = await fetch("", {
+      const res = await fetch("http://localhost:9090/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
