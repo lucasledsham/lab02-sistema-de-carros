@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Navbar></Navbar>
-      <h1 className="p-8 text-center text-6xl">Locadora "inserir"</h1>
+      <h1 className="p-8 text-center text-6xl">Locadora azilacol</h1>
       <CadastroForm />
     </>
   );
