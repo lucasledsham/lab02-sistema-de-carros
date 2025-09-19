@@ -32,11 +32,11 @@ import {
 
 const formSchema = z
   .object({
-    name: z.string().min(3, "O nome deve ter pelo menos 3 caracteres"),
+    nome: z.string().min(3, "O nome deve ter pelo menos 3 caracteres"),
     email: z.email("Email inválido"),
     password: z.string(),
     confirm: z.string(),
-    role: z.enum(["AGENTE", "CLIENTE"]),
+    userRole: z.enum(["AGENTE", "CLIENTE"]),
   })
   .refine(({ confirm, password }) => confirm === password, {
     path: ["confirm"],
@@ -48,36 +48,34 @@ export default function CadastroForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      nome: "",
       email: "",
       password: "",
       confirm: "",
-      role: "CLIENTE",
+      userRole: "CLIENTE",
     },
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const { confirm, ...userData } = values; // remocao do campo de confirmacao
-  try {
-    const res = await fetch("http://localhost:9090/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData), 
-    });
-    if (res.ok) {
-     // toast({
-     //   title: "Sucesso!",
-     //   description: "Cadastrado com sucesso",
-     //   variant: "success",
-     // });
-      form.reset();
-    } else {
-      throw new Error();
-    }
-  } catch (error) {
-    console.error(error);
-  
+    try {
+      const res = await fetch("http://localhost:9090/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        }
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
   return (
@@ -90,7 +88,7 @@ export default function CadastroForm() {
           <CardContent className="flex flex-col gap-2 pb-6">
             <FormField
               control={form.control}
-              name="name"
+              name="nome"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Nome</FormLabel>
@@ -150,7 +148,7 @@ export default function CadastroForm() {
             />
             <FormField
               control={form.control}
-              name="role"
+              name="userRole"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Tipo</FormLabel>
