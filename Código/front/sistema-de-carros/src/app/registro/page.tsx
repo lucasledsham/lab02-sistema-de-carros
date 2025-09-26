@@ -13,7 +13,7 @@ export default function Page() {
                     ]}
                     className=""
                   />
-      <h1 className="p-8 text-center text-6xl">Locadora "inserir"</h1>
+      <h1 className="p-8 text-center text-6xl">Locadora "Azilacol"</h1>
       <CadastroForm />
     </>
   );
