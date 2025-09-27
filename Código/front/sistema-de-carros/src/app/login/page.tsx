@@ -5,8 +5,15 @@ import CadastroForm from "./_form";
 export default function Page() {
   return (
     <>
-      <Navbar></Navbar>
-      <h1 className="p-8 text-center text-6xl">Locadora azilacol</h1>
+      <Navbar
+              links={[
+                { href: "/registro", title: "Criar conta" },
+                
+                
+              ]}
+              className=""
+            />
+      <h1 className="p-8 text-center text-6xl">Locadora "Azilacol"</h1>
       <CadastroForm />
     </>
   );

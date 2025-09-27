@@ -14,7 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import logo from "../components/ui/icons/AzilIcon.png";
+import logo from "../components/ui/icons/AziIcon.png";
 
 
 export type NavbarLink = { href: string; title: string };

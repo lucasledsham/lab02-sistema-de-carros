@@ -57,7 +57,7 @@ export default function LoginForm() {
         body: JSON.stringify(values),
       });
       if (res.ok) {
-        router.push("/");
+        router.push("/alugar");
       } else {
         throw new Error();
       }
