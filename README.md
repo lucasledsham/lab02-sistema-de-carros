@@ -43,5 +43,5 @@ Ele é dividido em dois subsistemas principais:
 - **Subsistema de Construção de Páginas Web:** Responsável pela renderização dinâmica das interfaces com o usuário.
 
 ## Tecnologias
-- Spring boot, React, Typescript, Tailwind.
+- Spring boot, React, Typescript, Tailwind e mongoDB.
 
