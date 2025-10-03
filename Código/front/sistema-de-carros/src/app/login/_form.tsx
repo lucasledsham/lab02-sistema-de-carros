@@ -50,7 +50,7 @@ export default function LoginForm() {
     try {
       /*TODO: inserir a url de acordo com o deploy*/
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://localhost:9090/auth/login", {
+      const res = await fetch("https://834627b74eb6.ngrok-free.app/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

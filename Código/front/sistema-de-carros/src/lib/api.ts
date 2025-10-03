@@ -4,7 +4,7 @@ import { ENV_CONFIG } from '../config/environment';
 export const API_BASE_URL = ENV_CONFIG.API_URL;
 
 export const API_ENDPOINTS = {
-  ALUGAR: `${API_BASE_URL}/alugar`,
+  ALUGAR: `${API_BASE_URL}/pedidos`,
   
 } as const;
 
