@@ -3,6 +3,8 @@
 ## Visão Geral
 Este projeto consiste no desenvolvimento de um sistema robusto para a gestão de aluguéis de automóveis, permitindo que usuários realizem, modifiquem e cancelem pedidos de aluguel de forma online. A plataforma foi desenvolvida para atender tanto clientes individuais quanto agentes (empresas e bancos), cada um com seus respectivos níveis de acesso e funcionalidades.
 
+- Link para acessar o projeto: https://calycate-candie-uncurved.ngrok-free.dev/
+
 ## Funcionalidades Principais
 
 ### 1. Gestão de Usuários e Acessos
